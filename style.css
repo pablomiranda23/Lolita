@@ -1,0 +1,672 @@
+/* Estilos generales */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background-color: #c54a79; color: #333; }
+
+/* Sección Hero */
+.hero { 
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('12.jpeg'); 
+    background-size: cover; background-position: center; 
+    height: 100vh; display: flex; align-items: center; justify-content: center; 
+    text-align: center; color: rgb(235, 190, 190); 
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px; color: #f5eef1e3}
+
+h2 { text-align: center; color: #ff8ebbe3; margin: 40px 0; font-size: 2.5rem; }
+
+/* Sección Contador */
+.seccion-contador {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.contador {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.box {
+    background: #fff0f5;
+    padding: 20px;
+    border-radius: 15px;
+    width: 120px;
+    border: 1px solid #ffcad4;
+}
+
+.contador span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #d81b60;
+}
+
+/* Sección Galería */
+.seccion-galeria { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
+.galeria { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.tarjeta-foto { 
+    background: white; padding: 15px; border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 300px; text-align: center; 
+}
+.tarjeta-foto img { width: 100%; height: 300px; object-fit: cover; border-radius: 10px; }
+
+/* Sección Mensaje */
+.seccion-mensaje { 
+    background-color: #ffe4e6; border-radius: 20px; text-align: center; 
+    font-size: 1.3rem; padding: 40px; max-width: 800px; margin: 40px auto;
+}
+
+/* Footer */
+footer { background-color: #d81b60; color: white; text-align: center; padding: 20px; font-size: 1.5rem; }
+
+/* =========================================================
+   MEJORAS VISUALES — se mantienen todos los estilos originales
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.hero {
+    position: relative;
+    isolation: isolate;
+}
+
+.hero::before {
+    content: "♡";
+    position: absolute;
+    top: 9%;
+    left: 8%;
+    color: rgba(255, 255, 255, .20);
+    font-size: 5rem;
+    animation: flotarCorazon 4s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "♡";
+    position: absolute;
+    bottom: 8%;
+    right: 9%;
+    color: rgba(255, 255, 255, .16);
+    font-size: 4rem;
+    animation: flotarCorazon 5s ease-in-out infinite reverse;
+}
+
+.contenedor-hero {
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    max-width: 900px;
+    animation: aparecerHero 1.2s ease both;
+}
+
+.seccion-contador {
+    position: relative;
+    overflow: hidden;
+}
+
+.seccion-contador::before {
+    content: "♡  ♡  ♡";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(216, 27, 96, .10);
+    letter-spacing: 22px;
+}
+
+.box {
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(216, 27, 96, .16);
+}
+
+.seccion-mensaje {
+    box-shadow: 0 8px 25px rgba(216, 27, 96, .10);
+    border: 1px solid rgba(216, 27, 96, .08);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.seccion-mensaje:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(216, 27, 96, .14);
+}
+
+.seccion-mensaje a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 22px;
+    background: #d81b60;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+    font-size: .9rem;
+    font-weight: 700;
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.seccion-mensaje a:hover {
+    background: #c2185b;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(216, 27, 96, .22);
+}
+
+.seccion-galeria {
+    position: relative;
+}
+
+.seccion-galeria > h1 {
+    color: #d81b60;
+    margin: 35px 0;
+    font-size: 2.5rem;
+}
+
+.tarjeta-foto {
+    transition: transform .3s ease, box-shadow .3s ease;
+    border: 1px solid #f5d8e1;
+}
+
+.tarjeta-foto:hover {
+    transform: translateY(-8px) rotate(-.5deg);
+    box-shadow: 0 14px 28px rgba(216, 27, 96, .15);
+}
+
+.tarjeta-foto:nth-child(even):hover {
+    transform: translateY(-8px) rotate(.5deg);
+}
+
+.tarjeta-nueva {
+    position: relative;
+    overflow: hidden;
+}
+
+.tarjeta-nueva::after {
+    content: "♡";
+    position: absolute;
+    top: 23px;
+    right: 25px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,.90);
+    color: #d81b60;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,.10);
+}
+
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before,
+footer::after {
+    content: "♡";
+    position: absolute;
+    color: rgba(255,255,255,.15);
+    font-size: 3rem;
+}
+
+footer::before {
+    left: 7%;
+    top: 5px;
+}
+
+footer::after {
+    right: 7%;
+    bottom: 5px;
+}
+
+@keyframes aparecerHero {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotarCorazon {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(5deg);
+    }
+}
+
+@media (max-width: 700px) {
+    .hero h1,
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .contador {
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        width: 105px;
+    }
+
+    .seccion-mensaje {
+        margin: 25px 12px;
+        padding: 28px 20px;
+    }
+
+    .seccion-galeria {
+        padding: 45px 15px;
+    }
+
+    .hero::before,
+    .hero::after {
+        font-size: 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   ✦ ULTRA VISUAL PACK — capa premium
+   Mantiene los estilos anteriores y añade profundidad,
+   animaciones, glassmorphism, fondos decorativos y efectos.
+   ========================================================= */
+
+:root {
+    --rosa-principal: #c54a79;
+    --rosa-intenso: #d81b60;
+    --rosa-claro: #ff8ebb;
+    --rosa-palido: #ffe4e6;
+    --rosa-blanco: #fff8fa;
+    --texto: #49353d;
+    --sombra-rosa: rgba(216, 27, 96, .18);
+}
+
+/* Fondo general más sofisticado */
+
+body {
+    background:
+        radial-gradient(circle at 10% 5%, rgba(255,255,255,.18), transparent 25%),
+        radial-gradient(circle at 90% 25%, rgba(255,142,187,.12), transparent 25%),
+        linear-gradient(135deg, #fff8fa 0%, #fff 45%, #fff0f5 100%);
+}
+
+/* HERO PREMIUM */
+
+.hero {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(197,74,121,.96), rgba(216,27,96,.90)),
+        url("12.jpeg") center/cover;
+    box-shadow: 0 18px 50px rgba(150, 35, 82, .28);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 25%, rgba(255,255,255,.20) 0 2px, transparent 3px),
+        radial-gradient(circle at 75% 70%, rgba(255,255,255,.16) 0 2px, transparent 3px);
+    background-size: 80px 80px, 110px 110px;
+    opacity: .8;
+    pointer-events: none;
+}
+
+.contenedor-hero {
+    width: min(900px, 92%);
+    padding: 55px 35px;
+    border: 1px solid rgba(255,255,255,.30);
+    border-radius: 32px;
+    background: rgba(255,255,255,.10);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 25px 70px rgba(70, 10, 35, .22);
+}
+
+.hero h1 {
+    text-shadow: 0 8px 25px rgba(75, 0, 35, .25);
+    letter-spacing: -.04em;
+}
+
+.hero p {
+    text-shadow: 0 3px 12px rgba(75, 0, 35, .20);
+}
+
+/* TÍTULOS DE SECCIÓN */
+
+.seccion-contador h2,
+.seccion-galeria h1 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 14px;
+}
+
+.seccion-contador h2::after,
+.seccion-galeria h1::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 70px;
+    height: 4px;
+    transform: translateX(-50%);
+    border-radius: 99px;
+    background: linear-gradient(90deg, #ff8ebb, #d81b60, #ff8ebb);
+}
+
+/* CONTADOR MÁS BONITO */
+
+.contador {
+    position: relative;
+    z-index: 1;
+    margin-top: 35px;
+}
+
+.box {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.90);
+    border: 1px solid rgba(216,27,96,.12);
+    box-shadow:
+        0 8px 25px rgba(216,27,96,.08),
+        inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.box::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    top: -45px;
+    right: -45px;
+    border-radius: 50%;
+    background: #ffe4e6;
+    transition: transform .4s ease;
+}
+
+.box:hover::before {
+    transform: scale(2.2);
+}
+
+.box span,
+.box p {
+    position: relative;
+    z-index: 1;
+}
+
+/* MENSAJE CENTRAL */
+
+.seccion-mensaje {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,.96), rgba(255,240,245,.96));
+    border: 1px solid rgba(216,27,96,.10);
+    box-shadow:
+        0 15px 40px rgba(216,27,96,.10),
+        inset 0 1px 0 #fff;
+}
+
+.seccion-mensaje::before {
+    content: "“";
+    position: absolute;
+    top: -35px;
+    left: 18px;
+    color: rgba(216,27,96,.08);
+    font-family: Georgia, serif;
+    font-size: 10rem;
+    line-height: 1;
+}
+
+.seccion-mensaje::after {
+    content: "♡";
+    position: absolute;
+    right: 28px;
+    bottom: 8px;
+    color: rgba(216,27,96,.09);
+    font-size: 4rem;
+}
+
+/* GALERÍA PREMIUM */
+
+.galeria {
+    perspective: 1000px;
+}
+
+.tarjeta-foto {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,.94);
+    border: 1px solid rgba(216,27,96,.12);
+    box-shadow:
+        0 10px 28px rgba(90, 30, 55, .10),
+        0 2px 5px rgba(90, 30, 55, .05);
+}
+
+.tarjeta-foto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,.28),
+        transparent 35%,
+        transparent 65%,
+        rgba(216,27,96,.07)
+    );
+    opacity: 0;
+    transition: opacity .35s ease;
+}
+
+.tarjeta-foto:hover::before {
+    opacity: 1;
+}
+
+.tarjeta-foto img {
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+}
+
+.tarjeta-foto:hover img {
+    transform: scale(1.07);
+    filter: saturate(1.08) contrast(1.02);
+}
+
+.tarjeta-foto p {
+    position: relative;
+    z-index: 3;
+}
+
+/* FOTOS NUEVAS */
+
+.tarjeta-nueva {
+    border: 2px solid rgba(255,142,187,.35);
+    box-shadow: 0 15px 35px rgba(216,27,96,.14);
+}
+
+.tarjeta-nueva::after {
+    content: "♥";
+    position: absolute;
+    z-index: 4;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #d81b60;
+    background: rgba(255,255,255,.90);
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+    transition: transform .3s ease;
+}
+
+.tarjeta-nueva:hover::after {
+    transform: scale(1.15) rotate(8deg);
+}
+
+/* BOTÓN DE ESTADÍSTICAS */
+
+.seccion-mensaje a {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.25);
+    background: linear-gradient(135deg, #d81b60, #c54a79);
+    box-shadow: 0 8px 22px rgba(216,27,96,.25);
+}
+
+.seccion-mensaje a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left .55s ease;
+}
+
+.seccion-mensaje a:hover::before {
+    left: 130%;
+}
+
+/* FOOTER */
+
+footer {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.12), transparent 20%),
+        linear-gradient(135deg, #c54a79, #d81b60);
+    box-shadow: 0 -12px 35px rgba(216,27,96,.15);
+}
+
+footer p {
+    position: relative;
+    z-index: 2;
+}
+
+/* BARRA DE SCROLL */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fff0f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ff8ebb, #d81b60);
+    border-radius: 20px;
+    border: 2px solid #fff0f5;
+}
+
+/* SELECCIÓN DE TEXTO */
+
+::selection {
+    background: #ff8ebb;
+    color: #fff;
+}
+
+/* ANIMACIONES */
+
+@keyframes premiumEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero,
+.seccion-contador,
+.seccion-mensaje,
+.seccion-galeria {
+    animation: premiumEntrada .9s ease both;
+}
+
+.seccion-contador {
+    animation-delay: .12s;
+}
+
+.seccion-mensaje {
+    animation-delay: .22s;
+}
+
+.seccion-galeria {
+    animation-delay: .32s;
+}
+
+/* REDUCIR ANIMACIONES SI EL USUARIO LO PREFIERE */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* MÓVIL */
+
+@media (max-width: 700px) {
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .contenedor-hero {
+        padding: 38px 22px;
+        border-radius: 24px;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .box:hover {
+        transform: translateY(-4px);
+    }
+
+    .tarjeta-foto:hover {
+        transform: translateY(-5px);
+    }
+
+    .seccion-mensaje::before {
+        font-size: 7rem;
+    }
+}
