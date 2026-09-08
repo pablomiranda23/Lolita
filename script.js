@@ -1,4 +1,4 @@
-functon actualizarContador() {
+function actualizarContador() {
     // 4 de julio de 2024, 23:59:00
     // Mes en JS es 0-indexado (6 es Julio)
     const fechaInicio = new Date(2026, 6, 4, 23, 59, 0);
